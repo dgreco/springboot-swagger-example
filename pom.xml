@@ -166,10 +166,11 @@
                             <language>spring</language>
                             <configOptions>
                                 <modelPackage>it.davidgreco.examples.springboot_swagger_example.model</modelPackage>
-                                <apiPackage>  it.davidgreco.examples.springboot_swagger_example.api</apiPackage>
+                                <apiPackage>it.davidgreco.examples.springboot_swagger_example.api</apiPackage>
                                 <sourceFolder>swagger</sourceFolder>
                                 <library>spring-boot</library>
                                 <java8>true</java8>
+                                <async>true</async>
                                 <useValidation>true</useValidation>
                                 <interfaceOnly>true</interfaceOnly>
                             </configOptions>
