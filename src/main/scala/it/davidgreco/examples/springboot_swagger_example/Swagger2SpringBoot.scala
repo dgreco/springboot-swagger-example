@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = Array[String]("io.swagger", "io.swagger.api"))
+@ComponentScan(basePackages = Array[String]("it.davidgreco.examples.springboot_swagger_example", "it.davidgreco.examples.springboot_swagger_example.api"))
 class Swagger2SpringBoot
 
 object Swagger2SpringBoot extends App {

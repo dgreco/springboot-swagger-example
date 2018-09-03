@@ -22,7 +22,7 @@ import springfox.documentation.spring.web.plugins.Docket
       select.
       apis(
         RequestHandlerSelectors.
-          basePackage("io.swagger.api")
+          basePackage("it.davidgreco.examples.springboot_swagger_example.controller")
       ).
       build.
       apiInfo(apiInfo)

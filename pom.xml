@@ -147,7 +147,7 @@
                             <language>spring</language>
                             <configOptions>
                                 <modelPackage>it.davidgreco.examples.springboot_swagger_example.model</modelPackage>
-                                <apiPackage>it.davidgreco.examples.springboot_swagger_example.api</apiPackage>
+                                <apiPackage>  it.davidgreco.examples.springboot_swagger_example.api</apiPackage>
                                 <sourceFolder>swagger</sourceFolder>
                                 <java8>true</java8>
                                 <interfaceOnly>true</interfaceOnly>
