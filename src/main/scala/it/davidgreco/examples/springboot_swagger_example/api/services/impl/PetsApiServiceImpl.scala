@@ -13,7 +13,13 @@ class PetsApiServiceImpl extends PetsApiService {
 
   override def addPet(pet: NewPet): Pet = new Pet()
 
-  override def findPetById(id: Long): Pet = new Pet()
+  override def findPetById(id: Long): Pet = {
+    val pet = new Pet()
+    pet.setId(id)
+    pet.setName("Romeo")
+    pet.setTag("Felino")
+    pet
+  }
 
   override def findPets(tags: JList[String], limit: Integer): JList[Pet] = { // dummy code
     List(new Pet).asJava
