@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /pet-store/v1
+
+logging:
+  level:
+    org.springframework: ERROR
+    org.apache.catalina: ERROR
+    springfox.documentation.spring.web: ERROR
+    it.davidgreco.examples.springboot_swagger_example: ERROR
