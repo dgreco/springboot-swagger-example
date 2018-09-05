@@ -1,3 +1,7 @@
+spring:
+  profiles:
+    active: dev
+
 springfox:
   documentation:
     swagger:
@@ -7,13 +11,3 @@ springfox:
 server:
   servlet:
     context-path: /pet-store/v1
-  port: 8088
-
-logging:
-  level:
-    org.springframework: ERROR
-    org.apache.catalina: ERROR
-    springfox.documentation.spring.web: ERROR
-    it.davidgreco.examples.springboot_swagger_example: ERROR
-
-
