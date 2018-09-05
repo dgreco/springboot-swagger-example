@@ -49,13 +49,12 @@
             <artifactId>validation-api</artifactId>
         </dependency>
         <!-- test dependencies -->
-<!--
         <dependency>
             <groupId>it.davidgreco.examples</groupId>
             <artifactId>springboot-swagger-example-client</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
         </dependency>
--->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
