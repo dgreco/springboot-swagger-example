@@ -8,3 +8,8 @@ logging:
     org.apache.catalina: ERROR
     springfox.documentation.spring.web: ERROR
     it.davidgreco.examples.springboot_swagger_example: ERROR
+
+spring:
+  main:
+    banner-mode: "off"
+
