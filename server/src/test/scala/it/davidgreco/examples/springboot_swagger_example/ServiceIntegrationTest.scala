@@ -40,7 +40,7 @@ class ServiceIntegrationTest extends FeatureSpec with GivenWhenThen with Matcher
         apiClient
       })
 
-      val response: Pet = client.findPetById(1L) //testRestTemplate.getForObject[Pet](s"/pets/$id", classOf[Pet])
+      val response: Pet = client.findPetById(1L)
 
       Then("we get a response with the pet in the body")
 
