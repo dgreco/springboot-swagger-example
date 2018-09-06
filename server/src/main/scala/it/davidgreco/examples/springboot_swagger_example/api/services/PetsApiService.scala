@@ -3,9 +3,7 @@ package it.davidgreco.examples.springboot_swagger_example.api.services
 import java.util.{List => JList}
 
 import it.davidgreco.examples.springboot_swagger_example.model.{NewPet, Pet}
-import org.springframework.stereotype.Service
 
-@Service
 trait PetsApiService {
   def addPet(pet: NewPet): Pet
 

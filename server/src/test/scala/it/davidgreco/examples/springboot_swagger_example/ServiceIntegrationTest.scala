@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT
 import org.springframework.boot.web.server.LocalServerPort
-import org.springframework.context.annotation.{Bean, Configuration}
+import org.springframework.context.annotation.{Bean, Configuration, Primary}
 import org.springframework.test.context.TestContextManager
 import org.springframework.web.client.RestTemplate
 
@@ -68,6 +68,7 @@ class ServiceIntegrationTestConfig {
   @Bean
   def restTemplate = new RestTemplate()
 
+  @Primary
   @Bean
   def petsApiService: PetsApiService = new PetsApiService {
     override def addPet(pet: NewPet): model.Pet = null
