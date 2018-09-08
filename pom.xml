@@ -25,6 +25,7 @@
         <java.version>1.8</java.version>
         <scala.version>2.12.6</scala.version>
         <scala.binary.version>2.12</scala.binary.version>
+        <scala-java8-compat.version>0.9.0</scala-java8-compat.version>
         <springboot.version>2.0.4.RELEASE</springboot.version>
         <springfox.version>2.8.0</springfox.version>
         <scala-test.version>3.0.5</scala-test.version>
@@ -72,7 +73,7 @@
             <dependency>
                 <groupId>org.scala-lang.modules</groupId>
                 <artifactId>scala-java8-compat_${scala.binary.version}</artifactId>
-                <version>0.9.0</version>
+                <version>${scala-java8-compat.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
