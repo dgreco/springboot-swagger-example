@@ -1,7 +1,5 @@
 package it.davidgreco.examples.springboot_swagger_example.api.services
 
-import java.util.{List => JList}
-
 import it.davidgreco.examples.springboot_swagger_example.model.{NewPet, Pet}
 
 trait PetsApiService {
@@ -9,5 +7,5 @@ trait PetsApiService {
 
   def findPetById(id: Long): Pet
 
-  def findPets(tags: JList[String], limit: Integer): JList[Pet]
+  def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet]
 }

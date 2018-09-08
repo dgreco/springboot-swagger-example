@@ -1,7 +1,5 @@
 package it.davidgreco.examples.springboot_swagger_example
 
-import java.util
-
 import it.davidgreco.examples.springboot_swagger_example.api.services.PetsApiService
 import it.davidgreco.examples.springboot_swagger_example.client.api.DefaultApi
 import it.davidgreco.examples.springboot_swagger_example.client.invoker.ApiClient
@@ -81,7 +79,7 @@ class ServiceIntegrationTestConfig {
       pet
     }
 
-    def findPets(tags: util.List[String], limit: Integer): util.List[Pet] = null
+    def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet] = List.empty[Pet]
   }
 }
 
