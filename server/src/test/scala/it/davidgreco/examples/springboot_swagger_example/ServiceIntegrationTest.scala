@@ -54,6 +54,27 @@ class ServiceIntegrationTest extends FeatureSpec with GivenWhenThen with Matcher
     }
   }
 
+  feature("PetsApi controller") {
+    scenario("Get all the pets") {
+      val id = 1
+      When("a request to /pets is sent")
+
+      val client = new DefaultApi({
+        val apiClient = new ApiClient(restTemplate)
+        apiClient.setBasePath(s"http://localhost:$port/pet-store/v1")
+        apiClient
+      })
+
+      val response = client.findPets(null, null)
+
+      Then("we get a response with a list of pets in the body")
+
+      response.size() shouldBe 1
+      response.get(0).getName shouldBe "TestRomeo2"
+      response.get(0).getTag shouldBe "TestFelino2"
+    }
+  }
+
 }
 
 @SuppressWarnings(
@@ -79,7 +100,15 @@ class ServiceIntegrationTestConfig {
       pet
     }
 
-    def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet] = List.empty[Pet]
+    def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet] = List(
+      {
+        val pet = new model.Pet()
+        pet.setId(2L)
+        pet.setName("TestRomeo2")
+        pet.setTag("TestFelino2")
+        pet
+      }
+    )
   }
 }
 

@@ -114,6 +114,7 @@
                                 <dateLibrary>java8-localdatetime</dateLibrary>
                                 <java8>true</java8>
                                 <async>true</async>
+                                <useOptional>true</useOptional>
                                 <useValidation>true</useValidation>
                                 <interfaceOnly>true</interfaceOnly>
                             </configOptions>
