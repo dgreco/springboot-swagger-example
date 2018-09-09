@@ -145,9 +145,6 @@
                             <jvmFlag>-Xms512m</jvmFlag>
                             <jvmFlag>-Xmx512m</jvmFlag>
                         </jvmFlags>
-                        <args>
-                            <arg>--spring.config.location=classpath:/,file:/app/config/</arg>
-                        </args>
                     </container>
                 </configuration>
                 <!--
