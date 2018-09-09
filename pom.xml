@@ -229,31 +229,6 @@
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
                     <version>${jib.maven.plugin}</version>
-                    <configuration>
-                        <allowInsecureRegistries>true</allowInsecureRegistries>
-                        <from>
-                            <image>openjdk:8u171-alpine</image>
-                        </from>
-                        <to>
-                            <image>${docker.registry}/${project.artifactId}:${project.version}</image>
-                        </to>
-                        <container>
-                            <jvmFlags>
-                                <jvmFlag>-Xms512m</jvmFlag>
-                                <jvmFlag>-Xmx512m</jvmFlag>
-                            </jvmFlags>
-                        </container>
-                    </configuration>
-                    <!--
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    -->
                 </plugin>
             </plugins>
         </pluginManagement>

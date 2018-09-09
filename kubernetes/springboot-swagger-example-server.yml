@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-swagger-example-server
+  labels:
+    app: springboot-swagger-example-server
+spec:
+  type: NodePort
+  ports:
+  - port: 8088
+    protocol: TCP
+    name: http
+  selector:
+    app: springboot-swagger-example-server
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: springboot-swagger-example-server
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: springboot-swagger-example-server
+    spec:
+      containers:
+      - name: springboot-swagger-example-server
+        image: 10.98.74.120:5000/springboot-swagger-example-server:1.0-SNAPSHOT
+        imagePullPolicy: Always
+        ports:
+        - name: client
+          containerPort: 8088
+#        securityContext:
+#          privileged: true
+#          runAsUser: 0
+        volumeMounts:
+         - name: springboot-swagger-example-server
+           mountPath: "/app/resources/application.yaml"
+           subPath: "application.yaml"
+           readOnly: true
+         - name: springboot-swagger-example-server
+           mountPath: "/app/resources/application-dev.yaml"
+           subPath: "application-dev.yaml"
+           readOnly: true
+         - name: springboot-swagger-example-server
+           mountPath: "/app/resources/application-prod.yaml"
+           subPath: "application-prod.yaml"
+           readOnly: true
+         - name: springboot-swagger-example-server
+           mountPath: "/app/resources/logback-spring.xml"
+           subPath: "logback-spring.xml"
+           readOnly: true
+      imagePullSecrets:
+        - name: regcred
+      volumes:
+        - name: springboot-swagger-example-server
+          secret:
+            secretName: springboot-swagger-example-server
+            items:
+            - key: application.yaml
+              path: application.yaml
+            - key: application-dev.yaml
+              path: application-dev.yaml
+            - key: application-prod.yaml
+              path: application-prod.yaml
+            - key: logback-spring.xml
+              path: logback-spring.xml
