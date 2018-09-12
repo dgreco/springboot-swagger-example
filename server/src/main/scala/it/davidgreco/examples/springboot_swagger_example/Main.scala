@@ -9,8 +9,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 @SpringBootApplication
 @EnableSwagger2
 @ComponentScan(basePackages = Array[String]("it.davidgreco.examples.springboot_swagger_example", "it.davidgreco.examples.springboot_swagger_example.api"))
-class Swagger2SpringBoot
+class Main
 
-object Swagger2SpringBoot extends App {
-  val ctx: ConfigurableApplicationContext = SpringApplication.run(classOf[Swagger2SpringBoot])
+object Main extends App {
+  val ctx: ConfigurableApplicationContext = SpringApplication.run(classOf[Main])
 }
+

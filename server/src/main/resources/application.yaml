@@ -11,3 +11,12 @@ springfox:
 server:
   servlet:
     context-path: /pet-store/v1
+
+#Admin Configuration
+spring.boot.admin.client.url: http://localhost:8080
+spring.boot.admin.client.username: user
+spring.boot.admin.client.password: password
+management.endpoints.web.exposure.include: "*"
+management.endpoint.health.show-details: when-authorized
+management.health.status.order: DOWN, OUT_OF_SERVICE, UNKNOWN, ODD, EVEN, UP
+management.info.git.mode: full

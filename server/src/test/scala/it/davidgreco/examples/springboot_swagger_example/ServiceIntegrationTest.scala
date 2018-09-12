@@ -13,6 +13,9 @@ import org.springframework.context.annotation.{Bean, Configuration, Primary}
 import org.springframework.test.context.TestContextManager
 import org.springframework.web.client.RestTemplate
 
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+
 @SuppressWarnings(
   Array(
     "org.wartremover.warts.Var",
@@ -90,9 +93,9 @@ class ServiceIntegrationTestConfig {
   @Primary
   @Bean
   def petsApiService: PetsApiService = new PetsApiService {
-    override def addPet(pet: NewPet): model.Pet = null
+    override def addPet(pet: NewPet): Future[model.Pet] = Future(new model.Pet())
 
-    override def findPetById(id: Long): model.Pet = {
+    override def findPetById(id: Long): Future[model.Pet] = Future {
       val pet = new model.Pet()
       pet.setId(id)
       pet.setName("TestRomeo")
@@ -100,7 +103,7 @@ class ServiceIntegrationTestConfig {
       pet
     }
 
-    def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet] = List(
+    def findPets(tags: Option[List[String]], limit: Option[Int]): Future[List[Pet]] = Future(List(
       {
         val pet = new model.Pet()
         pet.setId(2L)
@@ -108,7 +111,7 @@ class ServiceIntegrationTestConfig {
         pet.setTag("TestFelino2")
         pet
       }
-    )
+    ))
   }
 }
 

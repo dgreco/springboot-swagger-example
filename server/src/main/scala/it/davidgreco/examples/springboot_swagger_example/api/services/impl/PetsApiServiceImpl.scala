@@ -5,14 +5,19 @@ import it.davidgreco.examples.springboot_swagger_example.model.{NewPet, Pet}
 import org.apache.commons.logging.LogFactory
 import org.springframework.stereotype.Component
 
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+
 @Component
 class PetsApiServiceImpl extends PetsApiService {
 
   val logger = LogFactory.getLog(this.getClass.getName)
 
-  override def addPet(pet: NewPet): Pet = new Pet()
+  override def addPet(pet: NewPet): Future[Pet] = Future {
+    new Pet()
+  }
 
-  override def findPetById(id: Long): Pet = {
+  override def findPetById(id: Long): Future[Pet] = Future {
     val pet = new Pet()
     pet.setId(id)
     pet.setName("Romeo")
@@ -20,7 +25,7 @@ class PetsApiServiceImpl extends PetsApiService {
     pet
   }
 
-  override def findPets(tags: Option[List[String]], limit: Option[Int]): List[Pet] = List({
+  override def findPets(tags: Option[List[String]], limit: Option[Int]): Future[List[Pet]] = Future(List({
     logger.trace("Begin: findPets")
     val pet = new Pet()
     pet.setId(2L)
@@ -28,5 +33,5 @@ class PetsApiServiceImpl extends PetsApiService {
     pet.setTag("Bello")
     logger.trace("End: findPets")
     pet
-  })
+  }))
 }
