@@ -6,6 +6,7 @@ logging:
     org.springframework: ERROR
     org.apache.catalina: ERROR
     springfox.documentation.spring.web: ERROR
+    de.codecentric: ERROR
     it.davidgreco.examples.springboot_swagger_example: ERROR
 
 

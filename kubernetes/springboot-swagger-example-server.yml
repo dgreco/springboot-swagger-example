@@ -18,7 +18,7 @@ kind: Deployment
 metadata:
   name: springboot-swagger-example-server
 spec:
-  replicas: 4
+  replicas: 3
   template:
     metadata:
       labels:
@@ -31,9 +31,9 @@ spec:
         ports:
         - name: client
           containerPort: 8088
-#        securityContext:
-#          privileged: true
-#          runAsUser: 0
+        securityContext:
+          privileged: false
+#          runAsUser:
         volumeMounts:
          - name: springboot-swagger-example-server
            mountPath: "/app/resources/application.yaml"
@@ -51,6 +51,9 @@ spec:
            mountPath: "/app/resources/logback-spring.xml"
            subPath: "logback-spring.xml"
            readOnly: true
+        env:
+         - name: SPRING_APPLICATION_JSON
+           value: '{"spring": {"profiles": {"active": "prod"}}}'
       imagePullSecrets:
         - name: regcred
       volumes:
