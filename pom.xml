@@ -26,7 +26,7 @@
         <scala.version>2.12.6</scala.version>
         <scala.binary.version>2.12</scala.binary.version>
         <scala-java8-compat.version>0.9.0</scala-java8-compat.version>
-        <springboot.version>2.0.4.RELEASE</springboot.version>
+        <springboot.version>2.0.5.RELEASE</springboot.version>
         <springfox.version>2.8.0</springfox.version>
         <springboot.admin.version>2.0.2</springboot.admin.version>
         <scala-test.version>3.0.5</scala-test.version>
