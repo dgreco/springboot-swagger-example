@@ -23,8 +23,8 @@
     <properties>
         <docker.registry>10.98.74.120:5000</docker.registry>
         <java.version>1.8</java.version>
-        <scala.version>2.12.6</scala.version>
-        <scala.binary.version>2.12</scala.binary.version>
+        <scala.version>2.11.12</scala.version>
+        <scala.binary.version>2.11</scala.binary.version>
         <scala-java8-compat.version>0.9.0</scala-java8-compat.version>
         <springboot.version>2.0.5.RELEASE</springboot.version>
         <springfox.version>2.8.0</springfox.version>

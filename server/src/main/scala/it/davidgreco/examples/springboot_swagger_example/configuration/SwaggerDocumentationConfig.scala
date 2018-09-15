@@ -6,7 +6,8 @@ import springfox.documentation.service.Contact
 import springfox.documentation.spi.DocumentationType
 import springfox.documentation.spring.web.plugins.Docket
 
-@Configuration class SwaggerDocumentationConfig {
+@Configuration
+class SwaggerDocumentationConfig {
 
   private[configuration] def apiInfo = new ApiInfoBuilder().
     title("Petstore").
@@ -17,7 +18,8 @@ import springfox.documentation.spring.web.plugins.Docket
     version("0.3.1").
     contact(new Contact("", "", "")).build
 
-  @Bean def customImplementation: Docket =
+  @Bean
+  def customImplementation: Docket =
     new Docket(DocumentationType.SWAGGER_2).
       select.
       apis(
