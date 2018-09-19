@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: springboot-swagger-example-server
+  name: springboot-swagger-example-admin-server
   labels:
-    app: springboot-swagger-example-server
+    app: springboot-swagger-example-admin-server
 spec:
   type: NodePort
   ports:
@@ -11,22 +11,22 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: springboot-swagger-example-server
+    app: springboot-swagger-example-admin-server
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: springboot-swagger-example-server
+  name: springboot-swagger-example-admin-server
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
-        app: springboot-swagger-example-server
+        app: springboot-swagger-example-admin-server
     spec:
       containers:
-      - name: springboot-swagger-example-server
-        image: 10.98.74.120:5000/springboot-swagger-example-server:1.0-SNAPSHOT
+      - name: springboot-swagger-example-admin-server
+        image: 10.98.74.120:5000/springboot-swagger-example-admin-server:1.0-SNAPSHOT
         imagePullPolicy: Always
         ports:
         - name: client
@@ -35,33 +35,31 @@ spec:
           privileged: false
 #          runAsUser:
         volumeMounts:
-         - name: springboot-swagger-example-server
+         - name: springboot-swagger-example-admin-server
            mountPath: "/app/resources/application.yaml"
            subPath: "application.yaml"
            readOnly: true
-         - name: springboot-swagger-example-server
+         - name: springboot-swagger-example-admin-server
            mountPath: "/app/resources/application-dev.yaml"
            subPath: "application-dev.yaml"
            readOnly: true
-         - name: springboot-swagger-example-server
+         - name: springboot-swagger-example-admin-server
            mountPath: "/app/resources/application-prod.yaml"
            subPath: "application-prod.yaml"
            readOnly: true
-         - name: springboot-swagger-example-server
+         - name: springboot-swagger-example-admin-server
            mountPath: "/app/resources/logback-spring.xml"
            subPath: "logback-spring.xml"
            readOnly: true
         env:
          - name: SPRING_APPLICATION_JSON
            value: '{"spring": {"profiles": {"active": "prod"}}}'
-         - name: ADMIN_SERVER
-           value: springboot-swagger-example-admin-server.default.svc.cluster.local
       imagePullSecrets:
         - name: regcred
       volumes:
-        - name: springboot-swagger-example-server
+        - name: springboot-swagger-example-admin-server
           secret:
-            secretName: springboot-swagger-example-server
+            secretName: springboot-swagger-example-admin-server
             items:
             - key: application.yaml
               path: application.yaml

@@ -1,13 +1,3 @@
-spring:
-  application:
-    name: ${HOSTNAME}
-  boot:
-    admin:
-      client:
-        url: http://${ADMIN_SERVER}:8088/pet-store/v1
-        instance:
-          prefer-ip: true
-
 server:
   port: 8088
 

@@ -1,6 +1,14 @@
 spring:
+  application:
+    name: springboot-swagger-example-admin-server
   profiles:
     active: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:8088/pet-store/v1
+        instance:
+          prefer-ip: true
 
 server:
   servlet:
