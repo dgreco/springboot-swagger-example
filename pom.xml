@@ -4,7 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <repositories>
+        <repository>
+            <id>spingboot-milestones</id>
+            <name>springboot-milestones</name>
+            <url>http://repo.spring.io/milestone/</url>
+        </repository>
+    </repositories>
+
     <pluginRepositories>
+        <pluginRepository>
+            <id>spingboot-milestones</id>
+            <name>springboot-milestones</name>
+            <url>http://repo.spring.io/milestone/</url>
+        </pluginRepository>
         <pluginRepository>
             <id>sonatype-snapshots</id>
             <name>sonatype-snapshots</name>
@@ -22,12 +35,12 @@
 
     <properties>
         <docker.registry>10.98.74.120:5000</docker.registry>
-        <java.version>1.8</java.version>
-        <scala.version>2.11.12</scala.version>
-        <scala.binary.version>2.11</scala.binary.version>
+        <java.version>11</java.version>
+        <scala.version>2.12.7</scala.version>
+        <scala.binary.version>2.12</scala.binary.version>
         <scala-java8-compat.version>0.9.0</scala-java8-compat.version>
-        <springboot.version>2.0.5.RELEASE</springboot.version>
-        <springfox.version>2.8.0</springfox.version>
+        <springboot.version>2.1.0.M4</springboot.version>
+        <springfox.version>2.9.1</springfox.version>
         <springboot.admin.version>2.0.2</springboot.admin.version>
         <scala-test.version>3.0.5</scala-test.version>
         <scala.maven.plugin.version>3.4.2</scala.maven.plugin.version>
@@ -46,7 +59,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.0.M4</version>
     </parent>
 
     <dependencyManagement>
