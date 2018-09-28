@@ -146,7 +146,7 @@
                 <configuration>
                     <allowInsecureRegistries>true</allowInsecureRegistries>
                     <from>
-                        <image>openjdk:8u171-alpine</image>
+                        <image>openjdk:11</image>
                     </from>
                     <to>
                         <image>${docker.registry}/${project.artifactId}:${project.version}</image>
